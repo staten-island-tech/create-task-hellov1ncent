@@ -8,18 +8,18 @@ function checkGuess() {
     const guess = parseInt(guessInput.value);
 
     if (isNaN(guess) || guess < 1 || guess > 100) {
-        resultElement.textContent = 'Please enter a valid number between 1 and 100.';
+        resultElement.textContent = 'Please enter a number between 1 and 100.';
         return;
     }
 
     attempts++;
 
     if (guess < targetNumber) {
-        resultElement.textContent = 'Too low! Try a higher number.';
+        resultElement.textContent = 'Too low!';
     } else if (guess > targetNumber) {
-        resultElement.textContent = 'Too high! Try a lower number.';
+        resultElement.textContent = 'Too high!';
     } else {
-        resultElement.textContent = `Congratulations! You guessed the correct number ${targetNumber} in ${attempts} attempts.`;
+        resultElement.textContent = `Yay! You guessed the correct number ${targetNumber} in ${attempts} attempts.`;
         disableInputAndButton();
     }
 }
