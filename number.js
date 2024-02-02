@@ -1,3 +1,10 @@
+function disableInputAndButton() {
+    const guessInput = document.getElementById('guessInput');
+    const submitButton = document.querySelector('button');
+    guessInput.disabled = true;
+    submitButton.disabled = true;
+}
+
 const numbersArray = Array.from({ length: 100 }, (_, i) => i + 1);
 const targetNumber = Math.floor(Math.random() * 100) + 1;
 let attempts = 0;
@@ -22,11 +29,4 @@ function checkGuess() {
         resultElement.textContent = `Yay! You guessed the correct number ${targetNumber} in ${attempts} attempts.`;
         disableInputAndButton();
     }
-}
-
-function disableInputAndButton() {
-    const guessInput = document.getElementById('guessInput');
-    const submitButton = document.querySelector('button');
-    guessInput.disabled = true;
-    submitButton.disabled = true;
 }
